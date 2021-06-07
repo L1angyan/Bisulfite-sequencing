@@ -1,7 +1,7 @@
 # bismark --genome ~/PATH/to/GRCh38/ -1 read1.fastq.gz -2 read2.fastq.gz -p 4 -o ./ 2>test.log
 # for pair-end data. Here, authors apply single-end test data in FASTQ format.
 
-bsub -J fastqc -n 4 -R span[hosts=1] -o %J.out -e %J.err -q q2680v2 \
+bsub -J fastqc -n 16 -R span[hosts=1] -o %J.out -e %J.err -q q2680v2 \
 "bismark --genome ~/ly/protocol/bs-seq/ref-genome test_data.fastq -p 4 -o ./"
 # -p the number of thread.
 # Notably, based on the different method of constructing sequencing library, different parameters would be used.
